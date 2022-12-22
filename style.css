@@ -1,0 +1,189 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.christmas-card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 3s;
+}
+
+input#open {
+    display: none;
+}
+
+.card-front {
+    position: relative;
+    background-color: #fff;
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1);
+    transition: .3s;
+}
+
+.card-inside {
+    position: absolute;
+    background-color: #fff;
+    width: 200px;
+    height: 300px;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+}
+
+.open {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    z-index: 6;
+    cursor: pointer;
+}
+
+#open:checked~.card-front {
+    transform: rotateY(-155deg);
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1);
+}
+
+#open:checked~.card-front:before {
+    z-index: 5;
+}
+
+.card-front:before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 280px;
+    background-color: #c94038;
+    top: 10px;
+    left: 10px;
+}
+
+.christmas-tree {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-right: 50px solid transparent;
+    border-left: 50px solid transparent;
+    border-bottom: 160px solid #034247;
+    top: 75px;
+    left: 50px;
+}
+
+.christmas-tree:after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    background-color: #c47f1a;
+    left: -50px;
+    top: 140px;
+}
+
+
+.text {
+    position: absolute;
+    color: white;
+    font-family: brush script mt;
+    top: 260px;
+    width: 200px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.text:before {
+    content: "Merry Christmas!";
+    position: absolute;
+    width: 80px;
+    color: #333;
+    text-align: center;
+    line-height: 10px;
+    top: -42.5px;
+    left: 61px;
+}
+
+.star {
+    position: absolute;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-right: 20px solid transparent;
+    border-bottom: 13px solid #ffba08;
+    border-left: 20px solid transparent;
+    transform: rotate(-35deg);
+    top: 68px;
+    left: 80px;
+}
+
+.star:before {
+    border-bottom: 13px solid #ffba08;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -9px;
+    left: -11px;
+    display: block;
+    content: '';
+    transform: rotate(-35deg);
+}
+
+.star:after {
+    position: absolute;
+    display: block;
+    top: 0.75px;
+    left: -20px;
+    width: 0px;
+    height: 0px;
+    border-right: 20px solid transparent;
+    border-bottom: 13px solid #ffba08;
+    border-left: 20px solid transparent;
+    transform: rotate(-70deg);
+    content: '';
+}
+
+.card-inside:before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 280px;
+    background-color: #c94038;
+    top: 10px;
+    left: 10px;
+}
+
+.title {
+    position: absolute;
+    color: #333;
+    font-size: 30px;
+    font-family: brush script mt;
+    line-height: 25px;
+    text-align: center;
+    top: 45px;
+    width: 200px;
+}
+
+.wishes {
+    position: absolute;
+    width: 150px;
+    text-align: center;
+    font-family: brush script mt;
+    line-height: 15px;
+    font-size: 20px;
+    color: #333;
+    height: 300px;
+    top: 45%;
+    left: 25px;
+}
